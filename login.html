@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+    crossorigin="anonymous"
+  />
+
+</head>
+
+<body style="background-image: url(/img/Car\ Website\ –\ 1@2x.png); background-size: cover;background-repeat: no-repeat;height: 100vh;">
+    <div class="container">
+        <h1>Login</h1>
+        <div class="row">
+            <div class="col-md-5">
+
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email :</label>
+                    <input type="text" class="form-control" id="email">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password :</label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary" onclick="Login()">Login</button>
+                    <button type="button" onclick="sinup()"  class="btn btn-primary" >sinup</button>
+                    <button type="button" onclick="logout()"  class="btn btn-primary" >Logout</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+       
+        const firebaseConfig = {
+    apiKey: "AIzaSyBjx14-VH-1vd_bFI1C_F3WvO9LKcF-Ou0",
+    authDomain: "silken-vial-392823.firebaseapp.com",
+    databaseURL: "https://silken-vial-392823-default-rtdb.firebaseio.com",
+    projectId: "silken-vial-392823",
+    storageBucket: "silken-vial-392823.appspot.com",
+    messagingSenderId: "224670141673",
+    appId: "1:224670141673:web:7d4cf1ea55439b31e97478",
+    measurementId: "G-SDQGZ761Z4"
+  };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        let auth = getAuth(app)
+
+        async function Login() {
+            let email = document.getElementById("email").value
+            let password = document.getElementById("password").value
+            try {
+                await signInWithEmailAndPassword(auth, email, password)
+
+            } catch (err) {
+                alert("please enter email or password correct")
+
+            }
+
+        }
+
+        window.Login = Login
+
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                location.href = "http://127.0.0.1:5501/Product/Product.html"
+            }
+
+            function logout(){
+                location.href="/homepage/Home.html"
+            }
+            window.logout = logout
+            // console.log(user);
+
+        })
+
+                 //sinup
+                 function sinup(){
+                location.href="/Register.html"
+            }
+            window.sinup = sinup
+    </script>
+</body>
+
+</html>

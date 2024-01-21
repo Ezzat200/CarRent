@@ -1,0 +1,354 @@
+
+:root {
+    --color:#fe5b3d;
+    --mainColor: #FE9439;
+    --secondColor: #31396D;
+    --thirdColor:#444;
+    --gradientColor:linear-gradient(#FE9439,#fefefe);
+    /* --gradinet:linear-gradient(to right, red , yellow) */
+    
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Work+Sans:wght@200;500;700;800&display=swap');
+*{
+
+    font-family: 'Poppins', sans-seri;
+}
+
+body {
+   
+    height: 100vh;
+
+}
+.home-page{
+    background-image: url("/img/Car\ Website\ –\ 1@2x.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* start-navbar */
+.navbar .icon-x {
+    display: none;
+}
+
+
+.navbar .navbar-nav .nav-link {
+    color: black;
+    font-size: 15px;
+position: relative;
+
+}
+
+.navbar .navbar-nav .nav-link::after{
+content: '';
+position: absolute;
+bottom: -4px;
+left: 0;
+width: 0;
+height: 3px;
+background-color: var(--color);
+transition: 0.5s;
+}
+.navbar .navbar-nav .nav-link:hover::after{
+    width: 100%;
+}
+
+@media screen and (max-width:992px) {
+    .navbar .navbar-nav .nav-link:hover {
+        background-color: var(--mainColor);
+        margin-bottom: 10px;
+        color: white !important;
+    }
+
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.foucs {
+    color: var(--mainColor);
+}
+
+.navbar .navbar-nav .nav-link.active {
+    color: var(--mainColor);
+}
+
+.navbar .navbar-toggler {
+    color: black;
+    font-size: 20;
+    border-color: var(--mainColor);
+
+}
+
+.navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar .login {
+    background-color: #31396D;
+    border-color: white;
+}
+
+.navbar .login:hover {
+    background-color: var(--mainColor);
+    border-color: white;
+}
+
+.navbar .sinup {
+    background-color: transparent;
+    border: none;
+    color: black;
+
+}
+
+.navbar .sinup:hover {
+    background-color: var(--mainColor);
+    border-color: white;
+}
+
+/* end-navbar */
+
+/* start Home-Page */
+.cont {
+    margin-top: 100px;
+    transition: 0.5s;
+    
+}
+
+.container.cont h1 {
+    color: black;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.container.cont h1 span {
+    color: var(--mainColor);
+}
+
+@media screen and (max-width:992px) {
+    .cont {
+        text-align: center;
+
+    }
+
+    .container .para {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container.cont p {
+        width: 50% !important;
+    }
+
+}
+
+.container.cont p {
+    width: 50%;
+}
+
+.container .but {
+    border-color: white;
+    background-color: var(--mainColor);
+}
+.container .images img{
+width: 10%;
+margin-bottom: 120px;
+margin-top: 100px;
+}
+
+/* end content */
+
+/* start-ride */
+
+.ride{
+    margin-top: 0 !important;
+}
+.ride .text{
+    text-align: center;
+}
+.ride .text p{
+    margin: 0;
+    padding-top: 20px;
+    font-size: 20px;
+}
+.ride .text h1{
+ margin: 0 ;
+ padding: 0 ;
+ font-weight: bold;  
+}
+@media screen and (max-width:992px) {
+    .ride .cards{
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+.ride .cards{
+    margin-right: 30px !important ;
+    margin-top: 70px !important;
+    margin-bottom: 70px;
+}
+.ride .cards i{
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: var(--mainColor);
+}
+.ride .cards div {
+    text-align: center;
+    
+}
+.ride .cards div p{
+    color: gray;
+}
+/* end-ride */
+/* start-services */
+.services-section{
+    background-color: #ECECEC ;
+}
+.services p{
+font-size: 40px;
+}
+.services .card {
+    box-shadow: 0px 12px 20px 0px rgb(0, 0, 0 /13%),
+    0px 2px 4px 0px rgb(0, 0, 0 /12%);
+    margin-bottom: 20px;
+}
+.services .card .btn{
+    margin-bottom: 20px;
+}
+.services .card img{
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* overflow: hidden;
+    position: relative; */
+}
+/* .services .card img::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0px;
+    background-color: rgb(255 255 255/20%);
+    opacity: 0;
+    z-index: 2;
+  }
+  .services .card img:hover::before {
+    animation: flashing 0.7s;
+  }
+@keyframes flashing {
+    0%,
+    40% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      width: 200%;
+      height: 200%;
+    }
+  } */
+/* end-services */
+
+/* start-about-us */
+.about-section .container .para-text p:first-child{
+color: #fe5b3d;
+}
+.about-section .container .para-text button{
+    border: none;
+    transition: 0.5s;
+}
+.about-section .container .para-text button:hover{
+background-color: var(--mainColor);
+color: black;
+}
+@media screen and (max-width:992px) {
+    .about-section div:nth-child(2){
+        display: flex;
+        flex-direction: column;
+    }
+        /* .about-section div.about-image img{
+            width: 100%;
+        }
+        .about-section .para-text{
+            width: 100%;
+        } */
+
+}
+/* end-about-us */
+
+/* start-footer */
+footer {
+    padding-top: 20px;
+    background-image: url(/img/subscribe.jpg);
+    background-size: cover;
+    position: relative;
+  }
+  footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 /50%);
+  }
+  footer .container {
+    position: relative;
+    text-align: center;
+  }
+  footer .container img {
+    margin-bottom: 20px;
+  }
+  footer .container h2 {
+    color: white;
+    margin-bottom: 20px;
+  }
+  footer .container .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .container  ul {
+    list-style: none;
+  }
+  footer .container .icon li {
+    margin-left: 30px;
+    font-size: 20px;
+    color: white;
+  }
+  footer .container .icon li:hover{
+    color: #FE9439;
+  }
+  footer .container .para {
+    padding: 60px 0px 100px;
+    color: white;
+  }
+  footer .container .para span {
+    color: var(--second-color);
+  }
+  @media screen and (max-width:992px) {
+    footer .container  ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start !important;
+        width: 100%;
+
+    }
+    footer .container  ul li{
+        margin-bottom: 20px;
+    }
+}
+  /* end-footer */
+  
